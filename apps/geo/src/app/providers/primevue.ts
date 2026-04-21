@@ -1,0 +1,42 @@
+import { defaultOptions, type PrimeVueConfiguration } from 'primevue/config';
+
+export default {
+  unstyled: true,
+  locale: {
+    ...defaultOptions.locale,
+    selectionMessage: 'Выбрано {0}',
+    firstDayOfWeek: 1,
+    dateFormat: 'dd.mm.yy',
+    dayNames: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
+    dayNamesShort: ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'],
+    dayNamesMin: ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'],
+    monthNames: [
+      'Январь',
+      'Февраль',
+      'Март',
+      'Апрель',
+      'Май',
+      'Июнь',
+      'Июль',
+      'Август',
+      'Сентябрь',
+      'Октябрь',
+      'Ноябрь',
+      'Декабрь',
+    ],
+    monthNamesShort: [
+      'Янв',
+      'Февр',
+      'Март',
+      'Апр',
+      'Май',
+      'Июнь',
+      'Июль',
+      'Авг',
+      'Сент',
+      'Окт',
+      'Нояб',
+      'Дек',
+    ],
+  },
+} as PrimeVueConfiguration;

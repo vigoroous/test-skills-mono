@@ -1,0 +1,124 @@
+{
+  "version": 8,
+  "name": "MapTiler Streets v4 Dark",
+  "metadata": {
+    "maputnik:renderer": "mbgl",
+    "openmaptiles:version": "4.x"
+  },
+  "sources": {
+    "openmaptiles": {
+      "type": "vector",
+      "url": "https://api.maptiler.com/tiles/v4/tiles.json?key={api_key}",
+      "tileSize": 512
+    }
+  },
+  "sprite": "https://api.maptiler.com/maps/streets-v4-dark/sprite",
+  "glyphs": "https://api.maptiler.com/fonts/{fontstack}/{range}.pbf?key={api_key}",
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "#121212"
+      }
+    },
+    {
+      "id": "landuse",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landuse",
+      "filter": ["==", "class", "grass"],
+      "paint": {
+        "fill-color": "#1e1e1e",
+        "fill-opacity": 0.6
+      }
+    },
+    {
+      "id": "water",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "water",
+      "filter": ["==", "intermittent", 0],
+      "paint": {
+        "fill-color": "#1a2a2a"
+      }
+    },
+    {
+      "id": "waterway",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "waterway",
+      "paint": {
+        "line-color": "#1a2a2a",
+        "line-width": 1
+      }
+    },
+    {
+      "id": "building",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "building",
+      "paint": {
+        "fill-color": "#2a2a2a",
+        "fill-outline-color": "#3a3a3a"
+      }
+    },
+    {
+      "id": "road-network",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "paint": {
+        "line-color": "#1a1a1a",
+        "line-width": 3,
+        "line-blur": 1
+      }
+    },
+    {
+      "id": "road-major",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": ["in", "class", "primary", "secondary", "tertiary"],
+      "paint": {
+        "line-color": "#3a3a3a",
+        "line-width": 2,
+        "line-blur": 0.5
+      }
+    },
+    {
+      "id": "road-minor",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": ["in", "class", "residential", "service"],
+      "paint": {
+        "line-color": "#2a2a2a",
+        "line-width": 1.5,
+        "line-opacity": 0.8
+      }
+    },
+    {
+      "id": "landuse-residential",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "landuse",
+      "filter": ["==", "class", "residential"],
+      "paint": {
+        "fill-color": "#1e1e1e",
+        "fill-opacity": 0.5
+      }
+    },
+    {
+      "id": "park",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "park",
+      "paint": {
+        "fill-color": "#1a2a1a",
+        "fill-opacity": 0.7
+      }
+    }
+  ],
+  "id": "maptiler-streets-v4-dark"
+}

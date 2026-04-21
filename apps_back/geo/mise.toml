@@ -1,0 +1,11 @@
+[tasks."lint"]
+description = "Lint back"
+run_windows = "golangci-lint run"
+
+[tools]
+"aqua:golangci/golangci-lint" = "latest"
+go = "latest"
+watchexec = "latest"
+
+[tasks.dev]
+run_windows = ["watchexec -r -e go -- go run ./cmd/main.go"]
